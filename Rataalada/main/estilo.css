@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+    color: rgb(47, 145, 47);
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+@keyframes typing{
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes pisca{
+    from {border-color: green;}
+    to {border-color: white;}
+}
+
+.typedOut{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards,
+    pisca .8s steps(2, end) infinite;
+    white-space: nowrap;
+    border-right: 5px solid green;
+    margin-bottom: 5px;
+}
+.container{
+    width: fit-content;
+}
+
+input{
+    background-color: transparent;
+    border: 0;
+    width: 0;
+}
