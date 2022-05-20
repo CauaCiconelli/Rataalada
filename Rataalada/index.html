@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
+    <script src="main/funcs/funcs.js"></script>
     <title>HOME - DPGC</title>
 </head>
 <body>
@@ -22,68 +23,27 @@
         </ul>
     </div>
     <div class="banner">
-        <p>
-            <button class="btnCharada" onclick="cClick()">C</button>arregando Got<button class="btnCharada" onclick="hClick()">h</button><button class="btnCharada" onclick="aClick1()">a</button>m pa<button class="btnCharada" onclick="rClick()">r</button><button class="btnCharada" onclick="aClick2()">a</button> a plenitu<button class="btnCharada" onclick="dClick()">d</button>e e justiç<button class="btnCharada" onclick="aClick3()">a</button>
-        </p>
+        <div class="bannerTxt">
+            <button class="btnCharada" onclick="cClick()">C</button>arregando Got<button class="btnCharada" onclick="hClick()">h</button><button class="btnCharada" onclick="aClick1()">a</button>m pa<button class="btnCharada" onclick="rClick()">r</button><button class="btnCharada" onclick="aClick2()">a</button> a plenitu<button class="btnCharada" onclick="dClick()">d</button>e e justiç<button class="btnCharada" onclick="aClick3()">a</button><button id="charadaQuest" onclick="charada()">?</button>
+        </div>
+    </div>
+    <div class="ideais">
+        <div class="ideal">
+            <h3>Prisão</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto accusantium tenetur a. Incidunt at, repellat rem modi quod dolore odit recusandae sit magnam totam maxime, similique impedit fuga animi voluptatibus.</p>
+        </div>
+        <div class="ideal">
+            <h3>Reabilitação</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto accusantium tenetur a. Incidunt at, repellat rem modi quod dolore odit recusandae sit magnam totam maxime, similique impedit fuga animi voluptatibus.</p>
+        </div>
+        <div class="ideal">
+            <h3>Visitação</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto accusantium tenetur a. Incidunt at, repellat rem modi quod dolore odit recusandae sit magnam totam maxime, similique impedit fuga animi voluptatibus.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="riddle">Riddle me this</div>
+        <div class="footerTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto accusantium tenetur a. Incidunt at, repellat rem modi quod dolore odit recusanda</div>
     </div>
 </body>
 </html>
-<script>
-    var entrada = []
-    function cClick() {
-        entrada[0] = 'c'
-        if (entrada[3] == 'r' && entrada[1] == 'h'&& entrada[2] == 'a'&& entrada[5] == 'd'&& entrada[4] == 'a'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function hClick() {
-        entrada[1] = 'h'
-        if (entrada[0] == 'c' && entrada[3] == 'r'&& entrada[2] == 'a'&& entrada[5] == 'd'&& entrada[4] == 'a'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function aClick1() {
-        entrada[2] = 'a'
-        if (entrada[0] == 'c' && entrada[1] == 'h'&& entrada[3] == 'r'&& entrada[5] == 'd'&& entrada[4] == 'a'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function rClick() {
-        entrada[3] = 'r'
-        if (entrada[0] == 'c' && entrada[1] == 'h'&& entrada[2] == 'a'&& entrada[5] == 'd'&& entrada[4] == 'a'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function aClick2() {
-        entrada[4] = 'a'
-        if (entrada[0] == 'c' && entrada[1] == 'h'&& entrada[2] == 'a'&& entrada[3] == 'r'&& entrada[5] == 'd'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function dClick() {
-        entrada[5] = 'd'
-        if (entrada[0] == 'c' && entrada[1] == 'h'&& entrada[2] == 'a'&& entrada[3] == 'r'&& entrada[4] == 'a'&& entrada[6] == 'a') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-    function aClick3() {
-        entrada[6] = 'a'
-        if (entrada[0] == 'c' && entrada[1] == 'h' && entrada[2] == 'a' && entrada[3] == 'r' && entrada[4] == 'a' && entrada[5] == 'd') {
-            window.location.replace('main/rataalada.html');
-        } else {
-            
-        }
-    }
-</script>

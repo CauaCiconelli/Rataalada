@@ -12,25 +12,34 @@ body{
 }
 
 @keyframes pisca{
-    from {border-color: green;}
+    from {border-color: transparent;}
     to {border-color: white;}
 }
 
-.typedOut{
+.user{
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(20, end) forwards,
-    pisca .8s steps(2, end) infinite;
+    animation: typing 1s steps(6, end) 6s forwards,
+    pisca .8s steps(2) infinite;
     white-space: nowrap;
     border-right: 5px solid green;
     margin-bottom: 5px;
 }
+
+.identidade{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) 3s forwards,
+    pisca .8s steps(2) infinite;
+    white-space: nowrap;
+    border-right: 5px solid green;
+    margin-bottom: 5px;
+}
+
 .container{
     width: fit-content;
 }
 
-input{
-    background-color: transparent;
-    border: 0;
-    width: 0;
+#userInp{
+    visibility: hidden;
 }

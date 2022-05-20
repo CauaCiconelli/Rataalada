@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="funcs/funcs.js"></script>
     <link rel="stylesheet" href="estilo.css">
     <title>&lt;rataalada?&gt;</title>
 </head>
 <body>
     <div class="container">
-        <div class="typedOut">&gt; Confirme sua identidade:</div>
+        <div class="identidade">&gt; Confirme sua identidade:</div>
     </div>
     <div class="container">
-        <div id="userSpan">
-            &gt; User: <input autofocus type="text" id="userInp" onkeyup="usuario()"> <span id="userSpan"></span> 
+        <div class="user">
+            &gt; User: <input id="userInp" type="text" autofocus onkeyup="textoUser()"> 
         </div>
     </div>
 </body>

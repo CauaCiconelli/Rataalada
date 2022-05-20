@@ -2,7 +2,7 @@ body{
     margin: 0;
     background-color: #141414;
     color: rgb(182, 182, 182);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: gothambook;
 }
 
 .header{
@@ -43,9 +43,97 @@ a{
     background-color: inherit;
     padding: 0;
     margin: 0;
-    font-size: 16px;
     cursor: default;
-    display: inline-block;
-    color: rgb(182, 182, 182);
+    display: inline-block;    
+    color: inherit;
+    font-size: inherit;
     font-family: inherit;
+    font-weight: inherit;
+}
+
+@font-face {
+    font-family: 'gothambook';
+    src: url('fonts/gothambook-webfont.woff2') format('woff2'),
+         url('fonts/gothambook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'gothambookitalic';
+    src: url('fonts/gotham-bookitalic-webfont.woff2') format('woff2'),
+         url('fonts/gotham-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'gothambook_italic';
+    src: url('fonts/gothambookitalic-webfont.woff2') format('woff2'),
+         url('fonts/gothambookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.banner{
+    display: flex;
+    text-align: center;
+    background-image: url("https://pbs.twimg.com/media/ERfJdaLX0AM3x0F.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    height: 400px;
+    justify-content: center;
+    font-family: gothambook;
+    padding-top: 200px;
+    font-weight: 900;
+    filter: opacity(40%);
+}
+.bannerTxt{
+    color: rgb(50, 28, 148);
+    font-size: 40px;
+    width: 450px;
+}
+#charadaQuest{
+    visibility: hidden;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    display: inline-block;    
+    color: green;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+.ideais{
+    border-top:  2px solid rgb(182, 182, 182);
+    height: 700px;
+    font-size: 30px;
+}
+.ideal{
+    height: 200px;
+}
+@keyframes pisca{
+    from{color:rgb(182, 182, 182);}
+    to{color: rgb(70, 255, 70);}
+}
+.footer{
+    height: 90px;
+    background-color: rgb(41, 34, 71);
+    justify-content: space-between;
+    padding-top: 40px;
+} 
+.riddle{
+    animation: pisca 8s infinite alternate;
+    opacity: 30%;
 }
