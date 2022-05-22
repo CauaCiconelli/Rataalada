@@ -19,7 +19,7 @@ body{
 .user{
     overflow: hidden;
     width: 0;
-    animation: typing 1s steps(6, end) 6s forwards,
+    animation: typing 1s steps(6, end) 7s forwards,
     pisca .8s steps(2) infinite;
     white-space: nowrap;
     border-right: 5px solid green;
@@ -41,5 +41,5 @@ body{
 }
 
 #userInp{
-    visibility: hidden;
+    width: 0;
 }

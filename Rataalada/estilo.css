@@ -5,12 +5,15 @@ body{
     font-family: gothambook;
 }
 
+/* Header */
+
 .header{
     display: flex;
     justify-content: space-between;
     height: 110px;
     border-bottom: 2px solid rgb(182, 182, 182);
 }
+
 .header .container{
     width: 100px;
 }
@@ -25,6 +28,7 @@ body{
     align-items: center;
     font-size: 17px;
 }
+
 #logoGCPD{
     height: 100px;
 }
@@ -36,6 +40,37 @@ a{
 
 .aqui{
     color: aliceblue;
+}
+
+/* Banner */
+
+.banner{
+    display: flex;
+    text-align: center;
+    height: 400px;
+    justify-content: center;
+    font-family: gothambook;
+    padding-top: 200px;
+    font-weight: 900;
+}
+
+.index{
+    background-image: url("main/imgs/gcpdBanner.png");
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.batman{
+    background-image: url("https://1.bp.blogspot.com/-47DiXUeIojU/YUUG4ykciaI/AAAAAAAANUY/imWTgcgCr-kqiY92do0TYhwylfHtzXmpgCLcBGAsYHQ/s2048/Design%2Bsem%2Bnome%2B%25284%2529.png");
+    background-size: cover;
+    background-attachment: scroll;
+    filter: opacity(40%) blur(3px);
+}
+
+.bannerTxt{
+    color: rgba(182, 182, 182, 0.983);
+    font-size: 40px;
+    width: 450px;
 }
 
 .btnCharada{
@@ -51,6 +86,98 @@ a{
     font-weight: inherit;
 }
 
+.btnCharada:hover{
+    animation: dica .6s 1 forwards;
+}
+
+#charadaQuest{
+    visibility: hidden;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    display: inline-block;    
+    color: rgb(141, 182, 145);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+/* Ideais/Sociais */
+
+.ideais{
+    border-top:  2px solid rgb(182, 182, 182);
+    height: fit-content;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.ideal{
+    height: fit-content;
+    padding-left: 30px;
+    margin-bottom: 70px;
+    text-align: justify;
+}
+
+#contatoBatman{
+    width: 500px;
+    border: solid 5px rgb(182, 182, 182);
+}
+
+.imgIdeais{
+    display: flex;
+    background-color: #323232;
+    justify-content: space-evenly;
+}
+
+.imgIdeais p{
+    width: 55vw;
+    margin-top:95px;
+}
+
+/* Footer */
+
+.footer{
+    height: 100px;
+    background-color: rgb(41, 34, 71);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+} 
+
+.footerTxt{
+    text-align: center;
+} 
+
+.riddle{
+    animation: pisca 8s infinite alternate;
+    opacity: 10%;
+    text-align: center;
+}
+
+/* Animações */
+
+@keyframes pisca{
+    from{color:rgb(182, 182, 182);}
+    to{color: rgb(70, 255, 70);}
+}
+@keyframes tamanho{
+    from{width: 400px;}
+    to{width: 550px;}
+}
+@keyframes dica{
+    from{color: inherit;}
+    to{color: rgb(141, 182, 145);}
+}
+
+@keyframes seta{
+    from{background-color: rgb(182, 182, 182);}
+    to{background-color: #000000;}
+}
+
+/* Fontes */
+
 @font-face {
     font-family: 'gothambook';
     src: url('fonts/gothambook-webfont.woff2') format('woff2'),
@@ -59,9 +186,6 @@ a{
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'gothambookitalic';
@@ -72,9 +196,6 @@ a{
 
 }
 
-
-
-
 @font-face {
     font-family: 'gothambook_italic';
     src: url('fonts/gothambookitalic-webfont.woff2') format('woff2'),
@@ -84,56 +205,48 @@ a{
 
 }
 
-.banner{
+/* Extras */
+.criminosos{
+    height: 750px;
+    background-color: #323232;
     display: flex;
-    text-align: center;
-    background-image: url("https://pbs.twimg.com/media/ERfJdaLX0AM3x0F.jpg");
-    background-size: cover;
-    background-attachment: scroll;
-    height: 400px;
-    justify-content: center;
-    font-family: gothambook;
-    padding-top: 200px;
-    font-weight: 900;
-    filter: opacity(40%);
-}
-.bannerTxt{
-    color: rgb(50, 28, 148);
-    font-size: 40px;
-    width: 450px;
-}
-#charadaQuest{
-    visibility: hidden;
-    border: none;
-    background-color: inherit;
-    padding: 0;
-    margin: 0;
-    cursor: default;
-    display: inline-block;    
-    color: green;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-}
-.ideais{
-    border-top:  2px solid rgb(182, 182, 182);
-    height: 700px;
-    font-size: 30px;
-}
-.ideal{
-    height: 200px;
-}
-@keyframes pisca{
-    from{color:rgb(182, 182, 182);}
-    to{color: rgb(70, 255, 70);}
-}
-.footer{
-    height: 90px;
-    background-color: rgb(41, 34, 71);
     justify-content: space-between;
-    padding-top: 40px;
-} 
-.riddle{
-    animation: pisca 8s infinite alternate;
-    opacity: 30%;
+    padding: 50px;
+}
+
+.crime{
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    width: 575px;
+    background-color: #141414;
+    padding-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.criminoso:hover{
+    animation: tamanho .2s steps(30, end) 1 forwards;
+}
+
+.criminoso{
+    width: 400px;
+}
+.setas:hover{
+    cursor:pointer
+}
+
+.setas{
+    background: transparent;
+}
+
+.seta{
+    height: 730px;
+    width: 100px;
+    background-color: transparent;
+}
+
+.crime div{
+    text-align: center;
+
 }
