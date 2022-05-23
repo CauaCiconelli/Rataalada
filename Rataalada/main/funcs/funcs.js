@@ -64,7 +64,7 @@ function charada(){
 function usuario(){
     user = userInp.value
     if (user == `charada`){
-        alert(`charada?`)
+        window.location.replace('charada1.html');
     }
 }
 
