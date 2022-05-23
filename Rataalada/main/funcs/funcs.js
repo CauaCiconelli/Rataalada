@@ -92,14 +92,14 @@ function criminosoEsq(){
         nomeCrime.innerHTML = `Nome: Edward Nigma`
         idadeCrime.innerHTML = `Idade: 34`
         akaCrime.innerHTML = `Conhecido como: Charada`
-        procCrime.innerHTML = `Procurado desde: 21/11/2021`
+        procCrime.innerHTML = `Procurado desde: 04/05/2022`
         criminoso.src = `main/imgs/nigma.jpg`
     } else if (page == 0) {
         page = 4
         nomeCrime.innerHTML = `Nome: Edward Nigma`
         idadeCrime.innerHTML = `Idade: 34`
         akaCrime.innerHTML = `Conhecido como: Charada`
-        procCrime.innerHTML = `Procurado desde: 21/11/2021`
+        procCrime.innerHTML = `Procurado desde: 04/05/2022`
         criminoso.src = `main/imgs/nigma.jpg`
     }
 }
@@ -127,7 +127,7 @@ function criminosoDir(){
         nomeCrime.innerHTML = `Nome: Edward Nigma`
         idadeCrime.innerHTML = `Idade: 34`
         akaCrime.innerHTML = `Conhecido como: Charada`
-        procCrime.innerHTML = `Procurado desde: 21/11/2021`
+        procCrime.innerHTML = `Procurado desde: 04/05/2022`
         criminoso.src = `main/imgs/nigma.jpg`
     } else if (page == 5) {
         page = 1

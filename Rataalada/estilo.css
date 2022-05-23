@@ -206,6 +206,8 @@ a{
 }
 
 /* Extras */
+    /* Mais Procurados */
+
 .criminosos{
     height: 750px;
     background-color: #323232;
@@ -223,6 +225,7 @@ a{
     padding-top: 10px;
     overflow: hidden;
     white-space: nowrap;
+    border-radius: 10px;
 }
 
 .criminoso:hover{
@@ -249,4 +252,35 @@ a{
 .crime div{
     text-align: center;
 
+}
+    /* Boletim */
+
+.boletim{
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadroBoletim{
+    height: 600px;
+    width: 1000px;
+    border-radius: 10px;
+    background-color: rgb(182, 182, 182);
+    color: #323232;
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+    align-items: center;
+}
+
+.boletim input{
+    font-size: inherit;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+.boletim select{
+    font-size: inherit;
+    font-family: inherit;
 }
