@@ -15,7 +15,11 @@ body{
 }
 
 .header .container{
-    width: 100px;
+    display: flex;
+    width: 250px;
+    font-size: 30px;
+    align-items: center;
+    font-weight: 900;
 }
 
 .navBar{
@@ -271,8 +275,8 @@ a{
     height: 575px;
     width: 500px;
     border-radius: 10px;
-    background-color: rgb(182, 182, 182);
-    color: #323232;
+    background-color: #323232;
+    color: rgb(182, 182, 182);
     padding: 20px;
     padding-left: 17px;
     font-size: 20px;
@@ -327,5 +331,8 @@ button{
 
 .mapaGotham{
     height: 710px;
+    background-color: #323232;
     padding: 10px;
+    border-radius: 10px;
+    margin: 30px;
 }

@@ -6,6 +6,11 @@ body{
     font-weight: 500;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 @keyframes typing{
     from { width: 0 }
     to { width: 100% }
@@ -14,6 +19,14 @@ body{
 @keyframes pisca{
     from {border-color: transparent;}
     to {border-color: white;}
+}
+
+@keyframes imagem{
+    0% {height: 0;}
+    25%{height: 175px;}
+    50%{height: 350px;}
+    75%{height: 525px;}
+    100%{height: 700px;}
 }
 
 .user{
@@ -69,7 +82,7 @@ input{
 .riqueza3{
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(20, end) 9s forwards,
+    animation: typing 3s steps(18, end) 9s forwards,
     pisca .8s steps(2) 15;
     white-space: nowrap;
     border-right: 5px solid rgb(141, 141, 141);
@@ -78,7 +91,7 @@ input{
 .riqueza4{
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(20, end) 12s forwards,
+    animation: typing 3s steps(13, end) 12s forwards,
     pisca .8s steps(2) 19;
     white-space: nowrap;
     border-right: 5px solid rgb(141, 141, 141);
@@ -93,10 +106,70 @@ input{
     margin-bottom: 5px;
 }
 
-#next{
-    visibility: hidden;
+.bruce1{
     overflow: hidden;
     width: 0;
+    animation: typing 3s steps(20, end) 6s forwards,
+    pisca .8s steps(2) 8;
+    white-space: nowrap;
+    border-right: 5px solid rgb(141, 141, 141);
+    margin-bottom: 5px;
+}
+
+.bruce2{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) 9s forwards,
+    pisca .8s steps(2) 12;
+    white-space: nowrap;
+    border-right: 5px solid rgb(141, 141, 141);
+    margin-bottom: 5px;
+}
+
+.bruce3{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) 12s forwards,
+    pisca .8s steps(2) 15;
+    white-space: nowrap;
+    border-right: 5px solid rgb(141, 141, 141);
+    margin-bottom: 5px;
+}
+
+.bruce4{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) 15s forwards,
+    pisca .8s steps(2) 19;
+    white-space: nowrap;
+    border-right: 5px solid rgb(141, 141, 141);
+    margin-bottom: 5px;
+}
+
+.congrats{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(13, end) 3s forwards,
+    pisca .8s steps(2) 8;
+    white-space: nowrap;
+    border-right: 5px solid rgb(141, 141, 141);
+    margin-bottom: 5px;
+}
+
+.bruceImg{
+    overflow: hidden;
+    animation: imagem 4s steps(1, end) 20s forwards;
+    height: 0;
+}
+
+.bruceImg img{
+    height: 700px;
+}
+
+.pag{
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(13, end) 25s forwards;
     white-space: nowrap;
     margin-bottom: 5px;
 }

@@ -140,7 +140,7 @@ function criminosoDir(){
 }
 
 function riddle1(){
-    if (resp1.value == `Riqueza` || resp1.value == `riqueza`){
-        next.visibility = `visible`
+    if (resp1.value == `Riqueza` || resp1.value == `riqueza`){ 
+        
     }
 }
