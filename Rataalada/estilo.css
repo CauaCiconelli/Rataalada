@@ -34,7 +34,8 @@ body{
 }
 
 .navBar a:hover{
-    color: aliceblue
+    color: aliceblue;
+    font-size: 18px;
 }
 
 #logoGCPD{
