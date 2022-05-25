@@ -138,3 +138,9 @@ function criminosoDir(){
         criminoso.src = `main/imgs/fries.jpeg`
     }
 }
+
+function riddle1(){
+    if (resp1.value == `Riqueza` || resp1.value == `riqueza`){
+        next.visibility = `visible`
+    }
+}

@@ -92,3 +92,11 @@ input{
     white-space: nowrap;
     margin-bottom: 5px;
 }
+
+#next{
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
