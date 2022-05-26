@@ -336,9 +336,108 @@ button{
 }
 
 .mapaGotham{
+    width: 515px;
     height: 710px;
     background-color: #323232;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin: 30px;
+    align-items: baseline;
+}
+
+.mapaGotham2{
+    width: 590px;
+    height: 710px;
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 30px;
+    align-items: baseline;
+}
+
+
+.color1{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #a03e3e;
+}
+
+.color2{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #bb8e40;
+}
+
+.color3{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #36a0bb;
+}
+
+.color4{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #725e96;
+}
+
+.color5{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #a97fa6;
+}
+
+.color6{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #d3b829;
+}
+
+.color7{    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #5da65f;
+}
+
+.mapaGotham2 .container p{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.mapaGotham2 .container{
+    display: flex;
+    justify-content: space-evenly;
 }
