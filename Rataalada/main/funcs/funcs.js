@@ -60,7 +60,7 @@ function aClick3() {
 }
 
 function charada(){
-    window.location.replace('main/rataalada.html');
+    window.location.href = 'main/rataalada.html';
 }
 function usuario(){
     user = userInp.value
