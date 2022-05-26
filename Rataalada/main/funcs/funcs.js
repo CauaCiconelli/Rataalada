@@ -1,6 +1,7 @@
 var entrada = []
 var userName = ''
 var page = 1
+
 function cClick() {
     entrada[0] = 'c'
     if (entrada[3] == 'r' && entrada[1] == 'h'&& entrada[2] == 'a'&& entrada[5] == 'd'&& entrada[4] == 'a'&& entrada[6] == 'a') {
@@ -140,7 +141,12 @@ function criminosoDir(){
 }
 
 function riddle1(){
-    if (resp1.value == `Riqueza` || resp1.value == `riqueza`){ 
-        
+    var resp = resp1.value
+    if (resp == `Riqueza` || resp == `riqueza`){ 
+        window.location.replace('resultado1.html')
     }
+}
+
+function denuncia() {
+    boletimDen.innerHTML = `<ocorrencias-a></ocorrencias-a>`
 }

@@ -61,7 +61,7 @@ input{
     border: 0;
 }
 
-.riqueza1{
+.charada1{
     overflow: hidden;
     width: 0;
     animation: typing 3s steps(20, end) 3s forwards,
@@ -70,7 +70,7 @@ input{
     border-right: 5px solid rgb(141, 141, 141);
     margin-bottom: 5px;
 }
-.riqueza2{
+.charada2{
     overflow: hidden;
     width: 0;
     animation: typing 3s steps(20, end) 6s forwards,
@@ -79,7 +79,7 @@ input{
     border-right: 5px solid rgb(141, 141, 141);
     margin-bottom: 5px;
 }
-.riqueza3{
+.charada3{
     overflow: hidden;
     width: 0;
     animation: typing 3s steps(18, end) 9s forwards,
@@ -88,7 +88,7 @@ input{
     border-right: 5px solid rgb(141, 141, 141);
     margin-bottom: 5px;
 }
-.riqueza4{
+.charada4{
     overflow: hidden;
     width: 0;
     animation: typing 3s steps(13, end) 12s forwards,

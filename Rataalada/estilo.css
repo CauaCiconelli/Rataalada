@@ -45,6 +45,7 @@ body{
 a{
     text-decoration: none;
     color: rgb(182, 182, 182);
+    transition: 300ms;
 }
 
 .aqui{
@@ -176,10 +177,7 @@ a{
     from{color:rgb(182, 182, 182);}
     to{color: rgb(70, 255, 70);}
 }
-@keyframes tamanho{
-    from{width: 400px;}
-    to{width: 550px;}
-}
+
 @keyframes dica{
     from{color: inherit;}
     to{color: rgb(141, 182, 145);}
@@ -243,12 +241,13 @@ a{
 }
 
 .criminoso:hover{
-    animation: tamanho .2s steps(30, end) 1 forwards;
+    width: 550px;
 }
 
 .criminoso{
     width: 400px;
     border-radius: 10px;
+    transition: 700ms;
 }
 .setas:hover{
     cursor:pointer
@@ -271,14 +270,14 @@ a{
     /* Boletim */
 
 .boletim{
-    height: 730px;
+    height: 590px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .quadroBoletim{
-    height: 575px;
+    height: fit-content;
     width: 500px;
     border-radius: 10px;
     background-color: #323232;
@@ -309,7 +308,7 @@ a{
     box-sizing: border-box;
 }
 
-button{
+.boletim button{
     width: fit-content;
     height: fit-content;
     padding: 10px;
@@ -318,10 +317,13 @@ button{
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
+    transition: 400ms;
+    cursor: pointer;
 }
 
 .boletim button:hover{
     background-color:   rgb(104, 104, 104);
+    color: aliceblue;
 }
 
 .mapa{
@@ -362,7 +364,8 @@ button{
 }
 
 
-.color1{    
+.color1{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -372,7 +375,8 @@ button{
     background-color: #a03e3e;
 }
 
-.color2{    
+.color2{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -382,7 +386,8 @@ button{
     background-color: #bb8e40;
 }
 
-.color3{    
+.color3{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -392,7 +397,8 @@ button{
     background-color: #36a0bb;
 }
 
-.color4{    
+.color4{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -402,7 +408,8 @@ button{
     background-color: #725e96;
 }
 
-.color5{    
+.color5{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -412,7 +419,8 @@ button{
     background-color: #a97fa6;
 }
 
-.color6{    
+.color6{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
@@ -422,7 +430,8 @@ button{
     background-color: #d3b829;
 }
 
-.color7{    
+.color7{
+    border: solid 2px aliceblue;    
     align-items: center;
     display: flex;
     justify-content: center;
