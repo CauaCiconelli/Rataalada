@@ -326,6 +326,16 @@ a{
     color: aliceblue;
 }
 
+.anomBol{
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+    /*Delegacias*/
+
 .mapa{
     display: flex;
     justify-content: center;
