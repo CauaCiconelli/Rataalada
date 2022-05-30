@@ -6,12 +6,11 @@ create table usuario(
     senha varchar(45) not null
 );
 create table denuncia(
-	idDen int auto_increment,
-	distrito int,
-    primary key(idDen, distrito),
+	idDen int primary key auto_increment,
     nome varchar(45) not null,
     telefone char(14) not null,
     localDenuncia varchar(45) not null,
+	distrito int,
     dataHora datetime not null
 );
 create table ocorrencia(
