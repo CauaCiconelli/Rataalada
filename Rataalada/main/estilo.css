@@ -29,6 +29,20 @@ a{
     100%{height: 700px;}
 }
 
+.proceed{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 10s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.pass{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 8s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
 .user{
     overflow: hidden;
     width: 0;
