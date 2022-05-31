@@ -28,7 +28,7 @@
 </html>
 <script>
   const image = new Image();
-  image.src = 'css/imgs/riddlerMap.png';
+  image.src = 'css/imgs/riddlerSmall.png';
 
   const plugin = {
   id: 'custom_canvas_background_image',
@@ -58,7 +58,7 @@
     const ocorrencias = {
       labels: distritos,
       datasets: [{
-        label: 'My First dataset',
+        label: 'Distritos',
         backgroundColor: 'rgb(47, 145, 47)',
         borderColor: 'rgb(47, 145, 47)',
         data: [210, 109, 76, 40, 100, 76, 198],
@@ -68,44 +68,78 @@
     const ocorrencias2 = {
       labels: distritos,
       datasets: [{
-        label: 'My First dataset',
+        label: 'Gotham Central',
         backgroundColor: 'rgb(19, 86, 15)',
         borderColor: 'rgb(19, 86, 15)',
         clip: {left: false, top: false, right: false, bottom: false},
         data: [{
-            x:40,
-            y:40,
+            x:37,
+            y:79,
+            r:40
+        }],
+        label: 'Velha Gotham e Chinatown',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:33,
+            y:49,
             r:40
         },
         {
-            x:75,
-            y:48,
-            r:77
+            x:1,
+            y:1,
+            r:0
         },
         {
-            x:78,
-            y:44,
-            r:55
-        },
-        {
-            x:44,
-            y:66,
-            r:44
-        },
-        {
-            x:77,
-            y:88,
-            r:66
-        },
-        {
-            x:77,
-            y:99,
-            r:22
-        },
-        {
-            x:22,
+            x:100,
+            y:100,
+            r:0
+        }],
+        label: 'Bristol',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:55,
             y:55,
-            r:44
+            r:40
+        }],
+        label: 'Midtown e Burnley',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:75,
+            y:52,
+            r:40
+        }],
+        label: 'East End',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:70,
+            y:20,
+            r:40
+        }],
+        label: 'Otisburg',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:70,
+            y:20,
+            r:40
+        }],
+        label: 'Tricorner',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:22,
+            y:75,
+            r:40
         }],
       }]
     };
