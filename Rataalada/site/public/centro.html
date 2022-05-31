@@ -5,17 +5,133 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="funcs/funcs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/estiloc.css">
     <title>&lt;rataalada?&gt;</title>
 </head>
 <body>
     <div class="container">
-        <div class="identidade">&gt; <button onclick="cadastro()">eeei</button></div>
+        <div class="identidade">&gt; Contagem dos crimes em Gotham:</div>
     </div>
+    <div class="container">
+        <div class="canvasContainer">
+            <canvas id="crimesBarra">
+            </canvas>
+        </div>
+        <div class="canvasContainer">
+            <canvas id="crimesMapa">
+            </canvas>
+        </div>
+    </div>
+    <div class="proceedCentro">&gt; Deseja prosseguir? [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
 </body>
 </html>
 <script>
-    function cadastro(){
-        window.location.href = 'cadastro.html'
+  const image = new Image();
+  image.src = 'css/imgs/riddlerMap.png';
+
+  const plugin = {
+  id: 'custom_canvas_background_image',
+  beforeDraw: (chart) => {
+    if (image.complete) {
+      const ctx = chart.ctx;
+      const {top, left, width, height} = chart.chartArea;
+      const x = left + width / 2 - image.width / 2;
+      const y = top + height / 2 - image.height / 2;
+      ctx.drawImage(image, x, y);
+    } else {
+      image.onload = () => chart.draw();
     }
-</script>
+  }
+};
+
+    const distritos = [
+      'Central',
+      'Velha Gotham e Chinatown',
+      'Bristol',
+      'Midtown e Burnley',
+      'East End',
+      'Otisburg',
+      'Tricorner',
+    ];
+  
+    const ocorrencias = {
+      labels: distritos,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(47, 145, 47)',
+        borderColor: 'rgb(47, 145, 47)',
+        data: [210, 109, 76, 40, 100, 76, 198],
+      }]
+    };
+
+    const ocorrencias2 = {
+      labels: distritos,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(19, 86, 15)',
+        borderColor: 'rgb(19, 86, 15)',
+        clip: {left: false, top: false, right: false, bottom: false},
+        data: [{
+            x:40,
+            y:40,
+            r:40
+        },
+        {
+            x:75,
+            y:48,
+            r:77
+        },
+        {
+            x:78,
+            y:44,
+            r:55
+        },
+        {
+            x:44,
+            y:66,
+            r:44
+        },
+        {
+            x:77,
+            y:88,
+            r:66
+        },
+        {
+            x:77,
+            y:99,
+            r:22
+        },
+        {
+            x:22,
+            y:55,
+            r:44
+        }],
+      }]
+    };
+  
+    const config1 = {
+      type: 'bar',
+      data: ocorrencias,
+      options: {}
+    };
+
+    const config2 = {
+      type: 'bubble',
+      data: ocorrencias2,
+      options: {},
+      plugins: [plugin],
+    };
+
+    const crimesBarra = new Chart(
+    document.getElementById('crimesBarra'),
+    config1
+  );
+
+  const crimesMapa = new Chart(
+    document.getElementById('crimesMapa'),
+    config2
+  );
+
+  </script>
+  

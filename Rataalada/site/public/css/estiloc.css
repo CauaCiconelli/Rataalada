@@ -29,10 +29,23 @@ a{
     100%{height: 700px;}
 }
 
+@keyframes canvas{
+    from{visibility: hidden;}
+    to{visibility: visible;}
+}
+
 .proceed{
     overflow: hidden;
     width: 0;
-    animation: typing 1s steps(6, end) 10s forwards;
+    animation: typing 1s steps(6, end) 11s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.passConf{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 9s forwards;
     white-space: nowrap;
     margin-bottom: 5px;
 }
@@ -188,4 +201,14 @@ input{
     animation: typing 3s steps(13, end) 25s forwards;
     white-space: nowrap;
     margin-bottom: 5px;
+}
+
+.canvasContainer{
+    width: 1200px;
+}
+#crimesBarra{
+    animation: canvas 7s steps(1, end) forwards;
+}
+#crimesMapa{
+    animation: canvas 8s steps(1, end) forwards;
 }

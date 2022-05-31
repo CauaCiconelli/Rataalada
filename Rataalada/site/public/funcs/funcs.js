@@ -150,3 +150,9 @@ function riddle1(){
 function denuncia() {
     boletimDen.innerHTML = `<ocorrencias-a></ocorrencias-a>`
 }
+
+function cadastroPag(){
+    if (procInp.value == `y`) {   
+        window.location.href = 'cadastro.html'
+    }
+}
