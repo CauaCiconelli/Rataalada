@@ -62,12 +62,6 @@ function aClick3() {
 function charada(){
     window.location.href = 'rataalada.html';
 }
-function usuario(){
-    user = userInp.value
-    if (user == `charada`){
-        window.location.replace('charada1.html');
-    }
-}
 
 function criminosoEsq(){
     page--
@@ -145,10 +139,6 @@ function riddle1(){
     if (resp == `Riqueza` || resp == `riqueza`){ 
         window.location.replace('resultado1.html')
     }
-}
-
-function denuncia() {
-    boletimDen.innerHTML = `<ocorrencias-a></ocorrencias-a>`
 }
 
 function cadastroPag(){

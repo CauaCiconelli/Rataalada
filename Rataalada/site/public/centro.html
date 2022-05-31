@@ -18,12 +18,12 @@
             <canvas id="crimesBarra">
             </canvas>
         </div>
-        <div class="canvasContainer">
+        <!-- <div class="canvasContainer">
             <canvas id="crimesMapa">
             </canvas>
-        </div>
+        </div> -->
     </div>
-    <div class="proceedCentro">&gt; Deseja prosseguir? [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
+    <div class="proceedCentro">&gt; Cadastrar novo usuário [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
 </body>
 </html>
 <script>
@@ -65,107 +65,107 @@
       }]
     };
 
-    const ocorrencias2 = {
-      labels: distritos,
-      datasets: [{
-        label: 'Gotham Central',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:37,
-            y:79,
-            r:40
-        }],
-        label: 'Velha Gotham e Chinatown',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:33,
-            y:49,
-            r:40
-        },
-        {
-            x:1,
-            y:1,
-            r:0
-        },
-        {
-            x:100,
-            y:100,
-            r:0
-        }],
-        label: 'Bristol',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:55,
-            y:55,
-            r:40
-        }],
-        label: 'Midtown e Burnley',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:75,
-            y:52,
-            r:40
-        }],
-        label: 'East End',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:70,
-            y:20,
-            r:40
-        }],
-        label: 'Otisburg',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:70,
-            y:20,
-            r:40
-        }],
-        label: 'Tricorner',
-        backgroundColor: 'rgb(19, 86, 15)',
-        borderColor: 'rgb(19, 86, 15)',
-        clip: {left: false, top: false, right: false, bottom: false},
-        data: [{
-            x:22,
-            y:75,
-            r:40
-        }],
-      }]
-    };
+    // const ocorrencias2 = {
+    //   labels: distritos,
+    //   datasets: [{
+    //     label: 'Gotham Central',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:37,
+    //         y:79,
+    //         r:40
+    //     }],
+    //     label: 'Velha Gotham e Chinatown',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:33,
+    //         y:49,
+    //         r:40
+    //     },
+    //     {
+    //         x:1,
+    //         y:1,
+    //         r:0
+    //     },
+    //     {
+    //         x:100,
+    //         y:100,
+    //         r:0
+    //     }],
+    //     label: 'Bristol',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:55,
+    //         y:55,
+    //         r:40
+    //     }],
+    //     label: 'Midtown e Burnley',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:75,
+    //         y:52,
+    //         r:40
+    //     }],
+    //     label: 'East End',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:70,
+    //         y:20,
+    //         r:40
+    //     }],
+    //     label: 'Otisburg',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:70,
+    //         y:20,
+    //         r:40
+    //     }],
+    //     label: 'Tricorner',
+    //     backgroundColor: 'rgb(19, 86, 15)',
+    //     borderColor: 'rgb(19, 86, 15)',
+    //     clip: {left: false, top: false, right: false, bottom: false},
+    //     data: [{
+    //         x:22,
+    //         y:75,
+    //         r:40
+    //     }],
+    //   }]
+    // };
   
-    const config1 = {
-      type: 'bar',
-      data: ocorrencias,
-      options: {}
-    };
+     const config1 = {
+        type: 'bar',
+        data: ocorrencias,
+        options: {}
+      };
 
-    const config2 = {
-      type: 'bubble',
-      data: ocorrencias2,
-      options: {},
-      plugins: [plugin],
-    };
+    // const config2 = {
+    //   type: 'bubble',
+    //   data: ocorrencias2,
+    //   options: {},
+    //   plugins: [plugin],
+    // };
 
     const crimesBarra = new Chart(
     document.getElementById('crimesBarra'),
     config1
   );
 
-  const crimesMapa = new Chart(
-    document.getElementById('crimesMapa'),
-    config2
-  );
+  // const crimesMapa = new Chart(
+  //   document.getElementById('crimesMapa'),
+  //   config2
+  // );
 
   </script>
   

@@ -52,3 +52,56 @@
     </div>
 </body>
 </html>
+<script>
+    function concluirDen() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var userVar = userInp.value;
+        var senhaVar = passInp.value;
+        var confirmacaoSenhaVar = passConfInp.value;
+    
+        if (userVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "&gt; Se você não consegue cadastrar um usuário então você não é o charada!";
+            return false;
+        }
+        else {
+        }
+    
+        // Enviando o valor da nova input
+        fetch("/denuncias/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                userServer: userVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+    
+            console.log("resposta: ", resposta);
+    
+            if (resposta.ok) {
+                mensagem_erro.innerHTML = "Cadastro realizado?";
+    
+                setTimeout(() => {
+                    window.location = "centro.html";
+                }, "2000")
+                
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+    
+        return false;    
+    }
+            
+
+</script>
