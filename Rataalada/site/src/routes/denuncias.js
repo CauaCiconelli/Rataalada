@@ -15,5 +15,8 @@ router.get("/listar", function (req, res) {
 router.post("/denuncia", function (req, res) {
     denunciaController.denuncia(req, res);
 });
+router.post("/ocorrencia", function (req, res) {
+    denunciaController.ocorrencia(req, res);
+});
 
 module.exports = router;

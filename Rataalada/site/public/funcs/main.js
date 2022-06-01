@@ -12,6 +12,7 @@ class ocorrencias_b extends HTMLElement{
         <p class="localOcorBol">Insira a localização do crime:</p><input type="text" id="localOcorBol" placeholder="Ex: Rua dos Morcegos 3">
         <p class="descBol">Insira a descrição da ocorrência:</p><input type="text" id="descBol">
         <button onclick="concluirDen()">Enviar</button>
+        <div id="mensagem_erro"></div>
     </div>`
     }
 }

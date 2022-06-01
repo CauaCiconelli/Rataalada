@@ -81,7 +81,7 @@ function ocorrencia(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo denunciaModel.js
-        denunciaModel.denuncia(tipo, localOcor, desc, nome, local, dist)
+        denunciaModel.ocorrencia(tipo, localOcor, desc, nome, local, dist)
             .then(
                 function (resultado) {
                     res.json(resultado);
