@@ -1,6 +1,7 @@
 var entrada = []
 var userName = ''
 var page = 1
+var contadorErro = 0
 
 function cClick() {
     entrada[0] = 'c'
@@ -90,12 +91,12 @@ function criminosoEsq(){
         procCrime.innerHTML = `Procurado desde: 04/05/2022`
         criminoso.src = `css/imgs/nigma.jpg`
     } else if (page == 0) {
-        page = 4
-        nomeCrime.innerHTML = `Nome: Edward Nigma`
-        idadeCrime.innerHTML = `Idade: 34`
-        akaCrime.innerHTML = `Conhecido como: Charada`
-        procCrime.innerHTML = `Procurado desde: 04/05/2022`
-        criminoso.src = `css/imgs/nigma.jpg`
+        page = 5
+        nomeCrime.innerHTML = `Nome: Desconhecido`
+        idadeCrime.innerHTML = `Idade: Desconhecida`
+        akaCrime.innerHTML = `Conhecido como: Coringa`
+        procCrime.innerHTML = `Procurado desde: 01/06/2022`
+        criminoso.src = `css/imgs/coringa.jpeg`
     }
 }
 
@@ -125,6 +126,12 @@ function criminosoDir(){
         procCrime.innerHTML = `Procurado desde: 04/05/2022`
         criminoso.src = `css/imgs/nigma.jpg`
     } else if (page == 5) {
+        nomeCrime.innerHTML = `Nome: Desconhecido`
+        idadeCrime.innerHTML = `Idade: Desconhecida`
+        akaCrime.innerHTML = `Conhecido como: Coringa`
+        procCrime.innerHTML = `Procurado desde: 01/06/2022`
+        criminoso.src = `css/imgs/coringa.jpeg`
+    } else if (page == 6) {
         page = 1
         nomeCrime.innerHTML = `Nome: Victor Fries`
         idadeCrime.innerHTML = `Idade: 47`
@@ -135,14 +142,95 @@ function criminosoDir(){
 }
 
 function riddle1(){
-    var resp = resp1.value
-    if (resp == `Riqueza` || resp == `riqueza`){ 
-        window.location.replace('resultado1.html')
-    }
+    
+}
+function riddle2(){
+
 }
 
 function cadastroPag(){
     if (procInp.value == `y`) {   
         window.location.href = 'cadastro.html'
+    }
+}
+
+function prosseguir1(){
+    var resp = resp1.value
+    if (procInp.value == `y`) {  
+        if (resp == `Frio` || resp == `frio`){ 
+            window.location.replace('resultado1.html')
+        } else {
+            contadorErro++
+        }
+        if (contadorErro == 1) {
+            erro.innerHTML = '&gt; Será que você consegue acertar a tempo?'
+        } else if (contadorErro == 2) {
+            erro.innerHTML = '&gt; Mas o que é isso, você só pode estar brincando comigo'
+        } else if (contadorErro == 3) {
+            erro.innerHTML = '&gt; Você não merece nem continuar este jogo'
+            setTimeout(() => {
+                window.location.href = 'erro.html'
+            }, 4000);
+        }
+    } else{
+        window.location.href = 'erro.html'
+    }
+}
+
+function prosseguir2(){
+    var resp = resp2.value
+    if (procInp.value == `y`) {       
+        if (resp == `Riqueza` || resp == `riqueza`){ 
+            window.location.replace('resultado2.html')
+        } else {
+            contadorErro++
+        }
+        if (contadorErro == 1) {
+            erro.innerHTML = '&gt; Você já atravessou um desafio, mas não acho que vá passar deste'
+        } else if (contadorErro == 2) {
+            erro.innerHTML = '&gt; Sua incapacidade me diverte'
+        } else if (contadorErro == 3) {
+            erro.innerHTML = '&gt; Você não merece nem continuar este jogo'
+            setTimeout(() => {
+                window.location.href = 'erro.html'
+            }, 4000);
+        }
+    } else{
+        window.location.href = 'erro.html'
+    }
+}
+
+function prosseguir3(){
+    var resp = resp3.value
+    if (procInp.value == `y`) {       
+        if (resp == `Sombras` || resp == `sombras`){ 
+            window.location.replace('final.html')
+        } else {
+            contadorErro++
+        }
+        if (contadorErro == 1) {
+            erro.innerHTML = '&gt; Você está quae no final. Vamos, erre agora'
+        } else if (contadorErro == 2) {
+            erro.innerHTML = '&gt; Você foi muito bem até este ponto. Boa sorte na vida'
+        } else if (contadorErro == 3) {
+            erro.innerHTML = '&gt; Agora chega, a diversão acabou'
+            setTimeout(() => {
+                window.location.href = 'erro.html'
+            }, 4000);
+        }
+    } else{
+        window.location.href = 'erro.html'
+    }
+}
+
+function pag1(){
+    if (procInp.value == `y`) {   
+        window.location.href = 'charada2.html'
+    }
+}
+
+function pag2(){
+    if (procInp.value == `y`) {   
+        window.location.href = 'charada3.html'
     }
 }

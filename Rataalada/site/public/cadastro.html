@@ -49,6 +49,9 @@
                 }
                 else {
                 }
+                if (senhaVar != confirmacaoSenhaVar) {
+                    mensagem_erro.innerHTML - '$gt; Não, as duas entradas de senha devem ser iguais. Precisa que desenhe?'
+                }
             
                 // Enviando o valor da nova input
                 fetch("/usuarios/cadastrar", {
@@ -71,7 +74,7 @@
             
                         setTimeout(() => {
                             window.location = "centro.html";
-                        }, "2000")
+                        }, "5000")
                         
                         limparFormulario();
                     } else {

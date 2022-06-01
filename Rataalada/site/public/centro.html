@@ -1,163 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="funcs/funcs.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="css/estiloc.css">
-    <title>&lt;rataalada?&gt;</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="funcs/funcs.js"></script>
+  <script src="js/funcoes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/estiloc.css">
+  <title>&lt;rataalada?&gt;</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="identidade">&gt; Contagem dos crimes em Gotham:</div>
+  <div class="container">
+    <div class="identidade">&gt; Contagem dos crimes em Gotham:</div>
+  </div>
+  <div class="container">
+    <div class="canvasContainer">
+      <canvas id="crimesBarra">
+      </canvas>
     </div>
-    <div class="container">
-        <div class="canvasContainer">
-            <canvas id="crimesBarra">
-            </canvas>
-        </div>
-        <!-- <div class="canvasContainer">
+    <!-- <div class="canvasContainer">
             <canvas id="crimesMapa">
             </canvas>
         </div> -->
-    </div>
-    <div class="proceedCentro">&gt; Cadastrar novo usuário [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
+  </div>
+  <div class="proceedCentro">&gt; Cadastrar novo usuário [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
 </body>
+
 </html>
 <script>
+
+  window.onload = obterDadosGrafico();
+
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+  verificar_autenticacao();
+
+
   const image = new Image();
   image.src = 'css/imgs/riddlerSmall.png';
 
   const plugin = {
-  id: 'custom_canvas_background_image',
-  beforeDraw: (chart) => {
-    if (image.complete) {
-      const ctx = chart.ctx;
-      const {top, left, width, height} = chart.chartArea;
-      const x = left + width / 2 - image.width / 2;
-      const y = top + height / 2 - image.height / 2;
-      ctx.drawImage(image, x, y);
-    } else {
-      image.onload = () => chart.draw();
+    id: 'custom_canvas_background_image',
+    beforeDraw: (chart) => {
+      if (image.complete) {
+        const ctx = chart.ctx;
+        const { top, left, width, height } = chart.chartArea;
+        const x = left + width / 2 - image.width / 2;
+        const y = top + height / 2 - image.height / 2;
+        ctx.drawImage(image, x, y);
+      } else {
+        image.onload = () => chart.draw();
+      }
     }
-  }
-};
+  };
 
-    const distritos = [
-      'Central',
-      'Velha Gotham e Chinatown',
-      'Bristol',
-      'Midtown e Burnley',
-      'East End',
-      'Otisburg',
-      'Tricorner',
-    ];
-  
-    const ocorrencias = {
-      labels: distritos,
-      datasets: [{
-        label: 'Distritos',
-        backgroundColor: 'rgb(47, 145, 47)',
-        borderColor: 'rgb(47, 145, 47)',
-        data: [210, 109, 76, 40, 100, 76, 198],
-      }]
-    };
+  const distritos = [
+    'Central',
+    'Velha Gotham e Chinatown',
+    'Bristol',
+    'Midtown e Burnley',
+    'East End',
+    'Otisburg',
+    'Tricorner',
+  ];
 
-    // const ocorrencias2 = {
-    //   labels: distritos,
-    //   datasets: [{
-    //     label: 'Gotham Central',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:37,
-    //         y:79,
-    //         r:40
-    //     }],
-    //     label: 'Velha Gotham e Chinatown',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:33,
-    //         y:49,
-    //         r:40
-    //     },
-    //     {
-    //         x:1,
-    //         y:1,
-    //         r:0
-    //     },
-    //     {
-    //         x:100,
-    //         y:100,
-    //         r:0
-    //     }],
-    //     label: 'Bristol',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:55,
-    //         y:55,
-    //         r:40
-    //     }],
-    //     label: 'Midtown e Burnley',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:75,
-    //         y:52,
-    //         r:40
-    //     }],
-    //     label: 'East End',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:70,
-    //         y:20,
-    //         r:40
-    //     }],
-    //     label: 'Otisburg',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:70,
-    //         y:20,
-    //         r:40
-    //     }],
-    //     label: 'Tricorner',
-    //     backgroundColor: 'rgb(19, 86, 15)',
-    //     borderColor: 'rgb(19, 86, 15)',
-    //     clip: {left: false, top: false, right: false, bottom: false},
-    //     data: [{
-    //         x:22,
-    //         y:75,
-    //         r:40
-    //     }],
-    //   }]
-    // };
-  
-     const config1 = {
-        type: 'bar',
-        data: ocorrencias,
-        options: {}
-      };
+  const ocorrencias = {
+    labels: distritos,
+    datasets: [{
+      label: 'Distritos',
+      backgroundColor: 'rgb(47, 145, 47)',
+      borderColor: 'rgb(47, 145, 47)',
+      data: [210, 109, 76, 40, 100, 76, 198],
+    }]
+  };
 
-    // const config2 = {
-    //   type: 'bubble',
-    //   data: ocorrencias2,
-    //   options: {},
-    //   plugins: [plugin],
-    // };
+  // const ocorrencias2 = {
+  //   labels: distritos,
+  //   datasets: [{
+  //     label: 'Gotham Central',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:37,
+  //         y:79,
+  //         r:40
+  //     }],
+  //     label: 'Velha Gotham e Chinatown',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:33,
+  //         y:49,
+  //         r:40
+  //     },
+  //     {
+  //         x:1,
+  //         y:1,
+  //         r:0
+  //     },
+  //     {
+  //         x:100,
+  //         y:100,
+  //         r:0
+  //     }],
+  //     label: 'Bristol',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:55,
+  //         y:55,
+  //         r:40
+  //     }],
+  //     label: 'Midtown e Burnley',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:75,
+  //         y:52,
+  //         r:40
+  //     }],
+  //     label: 'East End',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:70,
+  //         y:20,
+  //         r:40
+  //     }],
+  //     label: 'Otisburg',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:70,
+  //         y:20,
+  //         r:40
+  //     }],
+  //     label: 'Tricorner',
+  //     backgroundColor: 'rgb(19, 86, 15)',
+  //     borderColor: 'rgb(19, 86, 15)',
+  //     clip: {left: false, top: false, right: false, bottom: false},
+  //     data: [{
+  //         x:22,
+  //         y:75,
+  //         r:40
+  //     }],
+  //   }]
+  // };
 
-    const crimesBarra = new Chart(
+  const config1 = {
+    type: 'bar',
+    data: ocorrencias,
+    options: {}
+  };
+
+  // const config2 = {
+  //   type: 'bubble',
+  //   data: ocorrencias2,
+  //   options: {},
+  //   plugins: [plugin],
+  // };
+
+  const crimesBarra = new Chart(
     document.getElementById('crimesBarra'),
     config1
   );
@@ -167,5 +179,144 @@
   //   config2
   // );
 
-  </script>
-  
+  function obterDadosGrafico() {
+
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico(resposta, idAquario);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  function plotarGrafico(resposta, idAquario) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var dados = {
+      labels: [],
+      datasets: [
+        {
+          yAxisID: 'y-umidade',
+          label: 'Umidade',
+          borderColor: '#32B9CD',
+          backgroundColor: '#32b9cd8f',
+          fill: true,
+          data: []
+        },
+        {
+          yAxisID: 'y-temperatura',
+          label: 'Temperatura',
+          borderColor: '#FFF',
+          backgroundColor: '#32b9cd8f',
+          fill: true,
+          data: []
+        }
+      ]
+    };
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.labels.push(registro.momento_grafico);
+      dados.datasets[0].data.push(registro.umidade);
+      dados.datasets[1].data.push(registro.temperatura);
+    }
+
+    console.log(JSON.stringify(dados));
+
+    var ctx = canvas_grafico.getContext('2d');
+    window.grafico_linha = Chart.Line(ctx, {
+      data: dados,
+      options: {
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: false,
+          text: 'Dados capturados'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear',
+            display: true,
+            position: 'left',
+            id: 'y-temperatura',
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+              min: 0
+            }
+          }, {
+            type: 'linear',
+            display: false,
+            position: 'right',
+            id: 'y-umidade',
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+              min: 0
+            },
+
+            gridLines: {
+              drawOnChartArea: false,
+            },
+          }],
+        }
+      }
+    });
+
+    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+  }
+
+  function atualizarGrafico(idAquario, dados) {
+
+    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          console.log(`Dados atuais do gráfico: ${dados}`);
+
+          // tirando e colocando valores no gráfico
+          dados.labels.shift(); // apagar o primeiro
+          dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+          dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+          dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+          dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+          dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+          window.grafico_linha.update();
+
+          // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+</script>

@@ -50,6 +50,14 @@ a{
     margin-bottom: 5px;
 }
 
+.proceedCharada{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 16s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
 .passConf{
     overflow: hidden;
     width: 0;
