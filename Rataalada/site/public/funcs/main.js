@@ -9,7 +9,7 @@ class ocorrencias_b extends HTMLElement{
             <option value="3">Atropelamento</option>
             <option value="4">Outros</option>
         </select>
-        <p class="localBol">Insira a localização do crime:</p><input type="text" id="localBol" placeholder="Ex: Rua dos Morcegos 3">
+        <p class="localOcorBol">Insira a localização do crime:</p><input type="text" id="localOcorBol" placeholder="Ex: Rua dos Morcegos 3">
         <p class="descBol">Insira a descrição da ocorrência:</p><input type="text" id="descBol">
         <button onclick="concluirDen()">Enviar</button>
     </div>`

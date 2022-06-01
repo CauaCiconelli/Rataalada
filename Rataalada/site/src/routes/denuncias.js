@@ -13,7 +13,7 @@ router.get("/listar", function (req, res) {
 
 //Recebendo os dados do html e direcionando para a função cadastrar de denunciaController.js
 router.post("/denuncia", function (req, res) {
-    denunciaController.cadastrar(req, res);
+    denunciaController.denuncia(req, res);
 });
 
 module.exports = router;

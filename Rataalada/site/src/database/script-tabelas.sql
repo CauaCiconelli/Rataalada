@@ -13,15 +13,17 @@ create table denuncia(
     telefone char(14) not null,
     localDenuncia varchar(45) not null,
     dataHora datetime not null
-);
+)auto_increment = 100;
 create table ocorrencia(
 	fkDen int,
+    fkDist int,
     foreign key(fkDen) references denuncia(idDen),
     tipo int,
-    primary key(fkDen, tipo),
+    primary key(fkDen, fkDist, tipo),
     localOcor varchar(45),
     descOcor varchar(70),
     dataOcor date
 );
+
 
 insert into usuario values(1, 'c#$r4da', '0q3oq&');
