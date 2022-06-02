@@ -153,6 +153,11 @@ function cadastroPag(){
         window.location.href = 'cadastro.html'
     }
 }
+function sair(){
+    if (procInp2.value == `y`) {   
+        window.location.href = 'index.html'
+    }
+}
 
 function prosseguir1(){
     var resp = resp1.value

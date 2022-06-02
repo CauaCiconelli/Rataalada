@@ -34,6 +34,14 @@ a{
     to{visibility: visible;}
 }
 
+.proceedCentro2{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 9s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+} 
+
 .proceedCentro{
     overflow: hidden;
     width: 0;
