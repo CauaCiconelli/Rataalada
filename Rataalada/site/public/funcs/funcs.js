@@ -2,6 +2,7 @@ var entrada = []
 var userName = ''
 var page = 1
 var contadorErro = 0
+var objetivo = []
 
 function cClick() {
     entrada[0] = 'c'
@@ -141,21 +142,16 @@ function criminosoDir(){
     }
 }
 
-function riddle1(){
-    
-}
-function riddle2(){
-
-}
-
 function cadastroPag(){
     if (procInp.value == `y`) {   
         window.location.href = 'cadastro.html'
+        procInp.value == ''
     }
 }
 function sair(){
     if (procInp2.value == `y`) {   
         window.location.href = 'index.html'
+        procInp2.value == ''
     }
 }
 
@@ -164,6 +160,7 @@ function prosseguir1(){
     if (procInp.value == `y`) {  
         if (resp == `Frio` || resp == `frio`){ 
             window.location.replace('resultado1.html')
+            procInp.value == ''
         } else {
             contadorErro++
         }
@@ -187,6 +184,7 @@ function prosseguir2(){
     if (procInp.value == `y`) {       
         if (resp == `Riqueza` || resp == `riqueza`){ 
             window.location.replace('resultado2.html')
+            procInp.value == ''
         } else {
             contadorErro++
         }
@@ -210,6 +208,7 @@ function prosseguir3(){
     if (procInp.value == `y`) {       
         if (resp == `Sombras` || resp == `sombras`){ 
             window.location.replace('final.html')
+            procInp.value == ''
         } else {
             contadorErro++
         }
@@ -231,11 +230,22 @@ function prosseguir3(){
 function pag1(){
     if (procInp.value == `y`) {   
         window.location.href = 'charada2.html'
+        procInp.value == ''
     }
 }
 
 function pag2(){
     if (procInp.value == `y`) {   
         window.location.href = 'charada3.html'
+        procInp.value == ''
+    }
+}
+
+function listaObj(){
+    if (inserir.value == 'y') {
+        objetivo.push(listagem.value)
+        listagem.value = ''       
+    } else if (inserir.value == 'n') {
+        listagem.value = ''
     }
 }
