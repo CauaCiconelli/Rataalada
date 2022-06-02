@@ -21,6 +21,16 @@
       <canvas id="crimesBarra">
       </canvas>
     </div>
+    <div class="container">
+      <div class="lista">&gt; Objetivos do dia:</div>
+    </div>
+    <div class="container" id="lista">
+      1º Terminar os preparativos para o plano
+    </div>
+    <div class="container">
+      <div class="listar">Insira novos objetivos: <input type="text" id="listagem"></div>
+      <div class="listaObj">Deseja inserir o objetivo? [y/n] <input type="text" id="inserir" onkeyup="listaObj()"></div>
+    </div>
     <!-- <div class="canvasContainer">
             <canvas id="crimesMapa">
             </canvas>
@@ -32,8 +42,9 @@
 
 </html>
 <script>
-
+  
   window.onload = obterDadosGrafico();
+  window.onload = mostrarLista();
 
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 

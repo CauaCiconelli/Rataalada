@@ -3,6 +3,7 @@ var userName = ''
 var page = 1
 var contadorErro = 0
 var objetivo = []
+objetivo[0] = 'Terminar os preparativos para o plano'
 
 function cClick() {
     entrada[0] = 'c'
@@ -241,11 +242,21 @@ function pag2(){
     }
 }
 
+function mostrarLista(){
+    lista.innerHTML = ''
+    for (var index = 0; index < objetivo.length; index++) {
+        lista.innerHTML += `<div>${index+1}º ${objetivo[index]}</div>`
+    }
+}
+
 function listaObj(){
     if (inserir.value == 'y') {
         objetivo.push(listagem.value)
-        listagem.value = ''       
+        listagem.value = ''
+        inserir.value = ''       
+        mostrarLista()
     } else if (inserir.value == 'n') {
         listagem.value = ''
+        inserir.value = ''
     }
 }
