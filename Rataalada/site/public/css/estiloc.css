@@ -37,7 +37,7 @@ a{
 .proceedCentro2{
     overflow: hidden;
     width: 0;
-    animation: typing 1s steps(6, end) 9s forwards;
+    animation: typing 1s steps(6, end) 14s forwards;
     white-space: nowrap;
     margin-bottom: 5px;
 } 
@@ -45,7 +45,7 @@ a{
 .proceedCentro{
     overflow: hidden;
     width: 0;
-    animation: typing 1s steps(6, end) 8s forwards;
+    animation: typing 1s steps(6, end) 15s forwards;
     white-space: nowrap;
     margin-bottom: 5px;
 } 
@@ -232,4 +232,35 @@ input{
 }
 #crimesBarra{
     animation: canvas 7s steps(1, end) forwards;
+}
+
+.lista{
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(10, end) 8s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.lista{
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(10, end) 10s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+#lista{
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(10, end) 12s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.listaObj{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(6, end) 14s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
 }
