@@ -37,7 +37,7 @@ function ocorrencia(tipo, localOcor, desc, nome, local, dist) {
 
 function grafico(dist){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ocorrencia():", dist);
-    var instrucao = `SELECT distrito, count(distrito) as DistCont from denuncia order by distrito group by distrito;
+    var instrucao = `SELECT count(distrito) as DistCont from denuncia order by distrito group by distrito;
 
     `    ;
     console.log("Executando a instrução SQL: \n" + instrucao);
