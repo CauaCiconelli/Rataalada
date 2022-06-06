@@ -44,6 +44,9 @@
   var dist = Number(distInp.value)
   
   window.onload = obterDadosGrafico();
+  setInterval(() => {
+    obterDadosGrafico
+  }, interval);
   window.onload = mostrarLista();
 
   // verificar_autenticacao();
@@ -69,9 +72,15 @@
 
                  resposta.json().then(json => {
                      console.log(json[0].DistCont);
+                     console.log(json[1].DistCont);
+                     console.log(json[2].DistCont);
+                     console.log(json[3].DistCont);
+                     console.log(json[4].DistCont);
+                     console.log(json[5].DistCont);
+                     console.log(json[6].DistCont);
                      console.log(json.distrito);
 
-
+                    
                      // sessionStorage.EMAIL_USUARIO = json.email;
 
                  });
