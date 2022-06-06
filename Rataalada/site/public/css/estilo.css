@@ -2,7 +2,7 @@ body{
     margin: 0;
     background-color: #141414;
     color: rgb(182, 182, 182);
-    font-family: gothambook;
+    font-family: gothambook, arial, monospace;
 }
 
 /* Header */

@@ -99,7 +99,32 @@ function ocorrencia(req, res) {
     }
 }
 
+function grafico(req, res){
+    var dist = req.body.distServer
+    if (dist == undefined) {
+        res.status(400).send("Seu distrito está undefined!");
+    } else{
+        denunciaModel.grafico(dist)
+        .then(
+            function (resultado){
+            console.log('cHEGUEI AQUI');
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro){
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro pegar o grafico! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        )
+    }
+}
+
 module.exports = {
+    grafico,
     ocorrencia,
     denuncia,
     listar,

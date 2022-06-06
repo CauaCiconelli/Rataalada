@@ -234,7 +234,7 @@ input{
     animation: canvas 7s steps(1, end) forwards;
 }
 
-.lista{
+.listar{
     overflow: hidden;
     width: 0;
     animation: typing 2s steps(10, end) 8s forwards;
