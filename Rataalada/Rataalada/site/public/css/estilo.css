@@ -1,0 +1,462 @@
+body{
+    margin: 0;
+    background-color: #141414;
+    color: rgb(182, 182, 182);
+    font-family: gothambook, arial, monospace;
+}
+
+/* Header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+    border-bottom: 2px solid rgb(182, 182, 182);
+}
+
+.header .container{
+    display: flex;
+    width: 250px;
+    font-size: 30px;
+    align-items: center;
+    font-weight: 900;
+}
+
+.navBar{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 1000px;
+    padding: 0;
+    margin-top: 20px;
+    align-items: center;
+    font-size: 17px;
+}
+
+.navBar a:hover{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+#logoGCPD{
+    height: 100px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+    transition: 300ms;
+}
+
+.aqui{
+    color: aliceblue;
+}
+
+/* Banner */
+
+.banner{
+    display: flex;
+    text-align: center;
+    height: 400px;
+    justify-content: center;
+    font-family: gothambook;
+    padding-top: 200px;
+    font-weight: 900;
+}
+
+.index{
+    background-image: url("imgs/gcpdBanner.png");
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.batman{
+    background-image: url("https://1.bp.blogspot.com/-47DiXUeIojU/YUUG4ykciaI/AAAAAAAANUY/imWTgcgCr-kqiY92do0TYhwylfHtzXmpgCLcBGAsYHQ/s2048/Design%2Bsem%2Bnome%2B%25284%2529.png");
+    background-size: cover;
+    background-attachment: scroll;
+    filter: opacity(40%) blur(3px);
+}
+
+.bannerTxt{
+    color: rgba(182, 182, 182, 0.983);
+    font-size: 40px;
+    width: 450px;
+}
+
+.btnCharada{
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    display: inline-block;    
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.btnCharada:hover{
+    animation: dica .6s 1 forwards;
+}
+
+#charadaQuest{
+    visibility: hidden;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    display: inline-block;    
+    color: rgb(141, 182, 145);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+/* Ideais/Sociais */
+
+.ideais{
+    border-top:  2px solid rgb(182, 182, 182);
+    height: fit-content;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.ideal{
+    height: fit-content;
+    padding-left: 30px;
+    margin-bottom: 70px;
+    text-align: justify;
+}
+
+#contatoBatman{
+    width: 500px;
+    border: solid 5px rgb(182, 182, 182);
+}
+
+.imgIdeais{
+    display: flex;
+    background-color: #323232;
+    justify-content: space-evenly;
+}
+
+.imgIdeais p{
+    width: 55vw;
+    margin-top:95px;
+}
+
+/* Footer */
+
+.footer{
+    height: 100px;
+    background-color: rgb(41, 34, 71);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.footerTxt{
+    text-align: center;
+} 
+
+.riddle{
+    animation: pisca 8s infinite alternate;
+    opacity: 10%;
+    text-align: center;
+}
+
+.footer .perg{
+    margin-top: -26px;
+}
+
+/* Animações */
+
+@keyframes pisca{
+    from{color:rgb(182, 182, 182);}
+    to{color: rgb(70, 255, 70);}
+}
+
+@keyframes dica{
+    from{color: inherit;}
+    to{color: rgb(141, 182, 145);}
+}
+
+@keyframes seta{
+    from{background-color: rgb(182, 182, 182);}
+    to{background-color: #000000;}
+}
+
+/* Fontes */
+
+@font-face {
+    font-family: 'gothambook';
+    src: url('fonts/gothambook-webfont.woff2') format('woff2'),
+         url('fonts/gothambook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gothambookitalic';
+    src: url('fonts/gotham-bookitalic-webfont.woff2') format('woff2'),
+         url('fonts/gotham-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gothambook_italic';
+    src: url('fonts/gothambookitalic-webfont.woff2') format('woff2'),
+         url('fonts/gothambookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Extras */
+    /* Mais Procurados */
+
+.criminosos{
+    height: 750px;
+    background-color: #323232;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.crime{
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    width: 575px;
+    background-color: #141414;
+    padding-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 10px;
+}
+
+.criminoso:hover{
+    width: 550px;
+}
+
+.criminoso{
+    width: 400px;
+    border-radius: 10px;
+    transition: 700ms;
+}
+.setas:hover{
+    cursor:pointer
+}
+
+.setas{
+    background: transparent;
+}
+
+.seta{
+    height: 730px;
+    width: 100px;
+    background-color: transparent;
+}
+
+.crime div{
+    text-align: center;
+
+}
+    /* Boletim */
+
+.boletim{
+    height: 590px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadroBoletim{
+    height: fit-content;
+    width: 500px;
+    border-radius: 10px;
+    background-color: #323232;
+    color: rgb(182, 182, 182);
+    padding: 20px;
+    padding-left: 17px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.boletim input{
+    font-size: inherit;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+.boletim select{
+    font-size: inherit;
+    font-family: inherit;
+}
+
+#descBol{
+    width: 500px;
+    height: 50px;
+    text-align: justify;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.boletim button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: 3px solid rgb(104, 104, 104);
+    color: #141414;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+.boletim button:hover{
+    background-color:   rgb(104, 104, 104);
+    color: aliceblue;
+}
+
+.anomBol{
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+    /*Delegacias*/
+
+.mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapaDelegacias{
+    height: 700px;
+    border-radius: 10px;
+}
+
+.mapaGotham{
+    width: 515px;
+    height: 710px;
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 30px;
+    align-items: baseline;
+}
+
+.mapaGotham2{
+    width: 590px;
+    height: 710px;
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 30px;
+    align-items: baseline;
+}
+
+
+.color1{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #a03e3e;
+}
+
+.color2{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #bb8e40;
+}
+
+.color3{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #36a0bb;
+}
+
+.color4{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #725e96;
+}
+
+.color5{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #a97fa6;
+}
+
+.color6{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #d3b829;
+}
+
+.color7{
+    border: solid 2px aliceblue;    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px 0px 30px 0px;
+    background-color: #5da65f;
+}
+
+.mapaGotham2 .container p{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.mapaGotham2 .container{
+    display: flex;
+    justify-content: space-evenly;
+}

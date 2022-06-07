@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="funcs/main.js"></script>
+    <script src="funcs/funcs.js"></script>
+    <script src="js/funcoes.js"></script>
+    <title>BOLETIM DE OCORRÊNCIA - DPGC</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img id="logoGCPD" src="https://i.pinimg.com/originals/ed/12/9b/ed129b01fe3ffa757a2fc83ed5a23042.png">
+            DPGC
+        </div>
+        <ul class="navBar">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="boletim.html" class="aqui">BOLETIM DE OCORRÊNCIA</a></li>
+            <li><a href="delegacias.html">DELEGACIAS</a></li>
+            <li><a href="mw.html">MAIS PROCURADOS</a></li>
+            <li><a href="batman.html">BATMAN</a></li>
+        </ul>
+    </div>
+    <div class="boletim" id="boletimDen">
+        <div class="quadroBoletim">
+            <p class="nomeBol">Insira seu nome:</p> <input type="text" id="nomeBol">
+            <p class="localBol">Insira a sua localização:</p><input type="text" id="localBol"
+                placeholder="Ex: Rua dos Morcegos 3">
+            <p class="telBol">Insira um telefone de contato</p><input type="text" id="telBol"
+                placeholder="Ex: (XX) XXXX-XXXX">
+            <p class="distBol">Selecione o distrito onde o crime ocorreu:</p>
+            <select id="distBol">
+                <option value="0">--Selecione uma opção--</option>
+                <option value="1">Gotham Central</option>
+                <option value="2">Velha Gotham</option>
+                <option value="2">Chinatown</option>
+                <option value="3">Bristol</option>
+                <option value="4">Midtown</option>
+                <option value="4">Burnley</option>
+                <option value="5">East End</option>
+                <option value="6">Otisburg</option>
+                <option value="7">Tricorner</option>
+            </select>
+            <button onclick="denuncia()">Enviar</button>
+            <div id="mensagem_erro"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footerTxt">A Polícia de Gotham é administrada pelo Governo de Gotham City. Todos os recursos e deveres
+            são fornecidos pelo povo. Viva Gotham!</p>
+    </div>
+</body>
+
+</html>
+<script>
+    var nomeVar = ''
+    var localVar
+    var distVar
+
+    function denuncia() {
+        if (distBol.value == 0) {
+            alert('É necessário que um distrito seja selecionado dentre as opções. Tente novamente')
+        } else {
+
+            //Recupere o valor da nova input pelo nome do id
+            // Agora vá para o método fetch logo abaixo
+            if (nomeBol.value == '') {
+                nomeVar = 'Anônimo';
+            } else {
+                nomeVar = nomeBol.value;
+            }
+            localVar = localBol.value;
+            var telVar = telBol.value;
+            distVar = distBol.value;
+
+            if (nomeVar == "" || localVar == "" || telVar == "" || distVar == "") {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "Insira dados se você realmente quer concluir uma denúncia";
+                return false;
+            }
+            else {
+            }
+
+            // Enviando o valor da nova input
+            fetch("/denuncias/denuncia", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    localServer: localVar,
+                    telServer: telVar,
+                    distServer: distVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    mensagem_erro.innerHTML = "Denúncia feita. Conclua a ocorrência a seguir";
+
+                    setTimeout(() => {
+                        troca();
+                    }, "5000")
+
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro da denúncia!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+        }
+    }
+
+    function concluirDen() {
+        if (tipoBol.value == 0) {
+            alert('Insira o tipo de ocorrência')
+        } else {
+
+            //Recupere o valor da nova input pelo nome do id
+            // Agora vá para o método fetch logo abaixo
+            var tipoVar = tipoBol.value;
+            if (localOcorBol.value == '') {
+                var localOcorVar = 'null'
+            } else {
+                var localOcorVar = localOcorBol.value;
+            }
+            var descVar = descBol.value;
+            tipoBol.value = ''
+            localOcorBol.value = ''
+            descBol.value = ''
+
+            if (tipoVar == "" || descVar == "") {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "Informações necessárias faltantes, tente novamente";
+                return false;
+            }
+            else {
+            }
+
+            // Enviando o valor da nova input
+            fetch("/denuncias/ocorrencia", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    tipoServer: tipoVar,
+                    localOcorServer: localOcorVar,
+                    descServer: descVar,
+                    nomeServer: nomeVar,
+                    localServer: localVar,
+                    distServer: distVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    mensagem_erro.innerHTML = "Boletim concluido. Policiais serão enviados logo";
+
+                    setTimeout(() => {
+                        window.location = "index.html";
+                    }, "5000")
+
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro da ocorrencia!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+        }
+    }
+    function troca() {
+        boletimDen.innerHTML = '<ocorrencias-a></ocorrencias-a>'
+    }
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="funcs/funcs.js"></script>
+    <link rel="stylesheet" href="css/estiloc.css">
+    <title>&lt;rataalada?&gt;</title>
+</head>
+<body>
+    <div class="container">
+        <div class="identidade">&gt; Cadastre uma nova identidade:</div>
+    </div>
+    <div class="container">
+        <div class="user">
+            &gt; User: <input id="userInp" type="text" autofocus> 
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="pass">
+            &gt; Password: <input id="passInp" type="password"> 
+        </div>
+    </div>
+    <div class="container">
+        <div class="passConf">
+            &gt; Password: <input id="passConfInp" type="password"> 
+        </div>
+    </div>
+    <div class="proceed">&gt; Deseja prosseguir? [y/n] <input id="procInp" onkeyup="cadastrar()"></div>
+    <div id="mensagem_erro"></div>
+</body>
+</html>
+<script>
+    function cadastrar() {
+        if (procInp.value == 'y') {
+            
+                //Recupere o valor da nova input pelo nome do id
+                // Agora vá para o método fetch logo abaixo
+                var userVar = userInp.value;
+                var senhaVar = passInp.value;
+                var confirmacaoSenhaVar = passConfInp.value;
+            
+                if (userVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+                    cardErro.style.display = "block"
+                    mensagem_erro.innerHTML = "&gt; Se você não consegue cadastrar um usuário então você não é o charada!";
+                    return false;
+                }
+                else {
+                }
+                if (senhaVar != confirmacaoSenhaVar) {
+                    mensagem_erro.innerHTML - '$gt; Não, as duas entradas de senha devem ser iguais. Precisa que desenhe?'
+                }
+            
+                // Enviando o valor da nova input
+                fetch("/usuarios/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+                        userServer: userVar,
+                        senhaServer: senhaVar
+                    })
+                }).then(function (resposta) {
+            
+                    console.log("resposta: ", resposta);
+            
+                    if (resposta.ok) {
+                        mensagem_erro.innerHTML = "Cadastro realizado?";
+            
+                        setTimeout(() => {
+                            window.location = "centro.html";
+                        }, "5000")
+                        
+                        limparFormulario();
+                    } else {
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                    }
+                }).catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+            
+                return false;
+                
+            }
+        }
+            
+
+</script>

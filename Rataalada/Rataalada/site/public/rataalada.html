@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="funcs/funcs.js"></script>
+    <link rel="stylesheet" href="css/estiloc.css">
+    <title>&lt;rataalada?&gt;</title>
+</head>
+<body>
+    <div class="container">
+        <div class="identidade">&gt; Confirme sua identidade:</div>
+    </div>
+    <div class="container">
+        <div class="user">
+            &gt; User: <input id="userInp" type="text" autofocus> 
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="pass">
+            &gt; Password: <input id="passInp" type="password"> 
+        </div>
+    </div>
+    <div class="proceed">&gt; Deseja prosseguir? [y/n] <input id="procInp" onkeyup="entrar()"></div>
+    <div id="mensagem_erro"></div>
+</body>
+</html>
+<script>   
+    function entrar() {
+        if (procInp.value == 'y') {
+            var userVar = userInp.value;
+            var senhaVar = passInp.value;
+    
+            if (userVar == "" || senhaVar == "") {
+                mensagem_erro.innerHTML = "&gt; O quê, você não conseguiu descobrir como entrar? Sabia que você era incapaz";
+                return false;
+            }
+            else {
+            }
+    
+            console.log("FORM LOGIN: ", userVar);
+            console.log("FORM SENHA: ", senhaVar);
+    
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userServer: userVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+    
+                if (resposta.ok) {
+                    console.log(resposta);
+    
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+    
+                        sessionStorage.USER_USUARIO = json.user;
+                        sessionStorage.ID_USUARIO = json.id;
+                        if (userVar == 'c#$r4da') {
+                            setTimeout(function () {
+                            window.location = "centro.html";
+                        }, 1000); // apenas para exibir o loading
+                            
+                        } else {
+                        setTimeout(function () {
+                            window.location = "charada1.html";
+                        }, 1000); // apenas para exibir o loading
+                    }
+                    });
+    
+                } else {
+    
+                    console.log("Houve um erro ao tentar realizar o login!");
+    
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+
+                    mensagem_erro.innerHTML = 'Você nem sabe qual o login! Boa sorte pra me derrotar...'
+                }
+    
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+    
+            return false;
+        } else if (procInp.value == 'n') {
+            window.location.href = '/index.html'
+        }
+    } 
+
+</script>
