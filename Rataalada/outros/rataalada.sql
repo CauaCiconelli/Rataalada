@@ -11,7 +11,7 @@ create table denuncia(
     primary key(idDen, distrito),
     nome varchar(45) not null,
     telefone char(14) not null,
-    localDenuncia varchar(45) not null,
+    localDenuncia varchar(100) not null,
     dataHora datetime not null
 )auto_increment = 100;
 create table ocorrencia(
@@ -20,8 +20,8 @@ create table ocorrencia(
     foreign key(fkDen) references denuncia(idDen),
     tipo int,
     primary key(fkDen, fkDist, tipo),
-    localOcor varchar(45),
-    descOcor varchar(70),
+    localOcor varchar(100),
+    descOcor varchar(200),
     dataOcor date
 );
 

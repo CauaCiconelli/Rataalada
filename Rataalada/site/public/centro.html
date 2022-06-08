@@ -18,22 +18,22 @@
   </div>
   <div class="container">
   </div>
-    <div class="container">
-      <div class="lista">&gt; Objetivos do dia:</div>
-    </div>
-    <div class="container" id="lista">
-      1º Terminar os preparativos para o plano
-    </div>
-    <div class="container">
-      <div class="listar">Insira novos objetivos: <input type="text" id="listagem"></div>
-    </div>
-    <div class="container">
-      <div class="listaObj">Deseja inserir o objetivo? [y/n] <input type="text" id="inserir" onkeyup="listaObj()"></div>
-    </div>
-     <div class="canvasContainer">
-            <canvas id="myChart">
-            </canvas>
-        </div> 
+  <div class="container">
+    <div class="lista">&gt; Objetivos do dia:</div>
+  </div>
+  <div class="container" id="lista">
+    1º Terminar os preparativos para o plano
+  </div>
+  <div class="container">
+    <div class="listar">Insira novos objetivos: <input type="text" id="listagem"></div>
+  </div>
+  <div class="container">
+    <div class="listaObj">Deseja inserir o objetivo? [y/n] <input type="text" id="inserir" onkeyup="listaObj()"></div>
+  </div>
+  <div class="canvasContainer">
+    <canvas id="myChart">
+    </canvas>
+  </div>
   </div>
   <div class="proceedCentro">&gt; Cadastrar novo usuário [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
   <div class="proceedCentro2">&gt; Sair [y/n] <input id="procInp2" onkeyup="sair()"></div>
@@ -42,7 +42,8 @@
 </html>
 <script>
   var dist = Number(distInp.value)
-  
+  var res = 0
+
   window.onload = obterDadosGrafico();
   setInterval(() => {
     obterDadosGrafico
@@ -51,70 +52,45 @@
 
   // verificar_autenticacao();
 
-  function obterDadosGrafico(){
+  function obterDadosGrafico() {
     if (distInp.value == '') {
       var distVar = 1
     } else {
       var distVar = dist
     }
     fetch("/denuncias/grafico", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            distServer: distVar
-        })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        distServer: distVar
+      })
     })
-     .then(function (resposta) {
-             if (resposta.ok) {
-                 console.log(resposta);
+      .then(function (resposta) {
+        if (resposta.ok) {
+          console.log(resposta);
 
-                 resposta.json().then(json => {
-                     console.log(json[0].DistCont);
-                     console.log(json[1].DistCont);
-                     console.log(json[2].DistCont);
-                     console.log(json[3].DistCont);
-                     console.log(json[4].DistCont);
-                     console.log(json[5].DistCont);
-                     console.log(json[6].DistCont);
-                     console.log(json.distrito);
+          resposta.json().then(json => {
+            console.log(json[0].DistCont);
+            console.log(json.distrito);
+            // sessionStorage.EMAIL_USUARIO = json.email;
+            res = json[0]
+          });
 
-                     const data = {
-                      labels: [],
-                      datasets: [{
-                        label: 'Gotham Central',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        data: [json[0].DistCont],
-                      }]
-                    };
+        } else {
 
-                    const config = {
-                      type: 'bar',
-                      data: data,
-                      options: {}
-                    };const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-                     // sessionStorage.EMAIL_USUARIO = json.email;
+          console.log("Houve um erro ao tentar realizar o login!");
+          resposta.text().then(texto => {
+            console.error(texto);
+          });
+        }
 
-                 });
+      }).catch(function (erro) {
+        console.log(erro);
+      })
 
-             } else {
-
-                 console.log("Houve um erro ao tentar realizar o login!");
-                 resposta.text().then(texto => {
-                     console.error(texto);
-                 });
-             }
-
-         }).catch(function (erro) {
-             console.log(erro);
-         })
-
-         return false;
-    }
+    return false;
+  }
 
 </script>

@@ -1,7 +1,6 @@
 var entrada = []
 var userName = ''
 var page = 1
-var contadorErro = 0
 var objetivo = []
 objetivo[0] = 'Terminar os preparativos para o plano'
 
@@ -158,6 +157,7 @@ function sair(){
 
 function prosseguir1(){
     var resp = resp1.value
+    var contadorErro = 0
     if (procInp.value == `y`) {  
         if (resp == `Frio` || resp == `frio`){ 
             window.location.replace('resultado1.html')
@@ -182,6 +182,7 @@ function prosseguir1(){
 
 function prosseguir2(){
     var resp = resp2.value
+    var contadorErro = 0
     if (procInp.value == `y`) {       
         if (resp == `Riqueza` || resp == `riqueza`){ 
             window.location.replace('resultado2.html')
@@ -207,7 +208,7 @@ function prosseguir2(){
 function prosseguir3(){
     var resp = resp3.value
     if (procInp.value == `y`) {       
-        if (resp == `Sombras` || resp == `sombras`){ 
+        if (resp == `Sombra` || resp == `sombra`){ 
             window.location.replace('final.html')
             procInp.value == ''
         } else {

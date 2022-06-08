@@ -163,7 +163,7 @@ a{
 
 .riddle{
     animation: pisca 8s infinite alternate;
-    opacity: 10%;
+    opacity: 30%;
     text-align: center;
 }
 
@@ -270,7 +270,7 @@ a{
     /* Boletim */
 
 .boletim{
-    height: 590px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
