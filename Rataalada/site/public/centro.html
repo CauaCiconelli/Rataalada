@@ -11,13 +11,20 @@
   <link rel="stylesheet" href="css/estiloc.css">
   <title>&lt;rataalada?&gt;</title>
 </head>
-
 <body>
   <div class="container">
-    <div class="identidade">&gt; Contagem dos crimes em Gotham; Insira o distrito desejado <input id="distInp"></div>
+    <div class="identidade">&gt; Crimes cometidos em Gotham:</div>
+  </div>
+  <div class="container distA">
+    <a onclick="obterDadosGrafico()">Atualizar</a>
   </div>
   <div class="container">
-    <div class="lista">&gt; Objetivos do dia:</div>
+    <div class="distrito">
+      <span id="resultado">
+    </div>
+  </div>
+<div class="container">
+  <div class="lista">&gt; Objetivos do dia:</div>
   </div>
   <div class="container" id="lista">
     1º Terminar os preparativos para o plano
@@ -26,64 +33,87 @@
     <div class="listar">Insira novos objetivos: <input type="text" id="listagem"></div>
   </div>
   <div class="container">
-    <div class="listaObj">Deseja inserir o objetivo? [y/n] <input type="text" id="inserir" onkeyup="listaObj()"></div>
+    <div class="listaObj">Deseja inserir o objetivo? [y/n] <input type="text" id="inserir" onchange="listaObj()"></div>
   </div>
+
   <div class="proceedCentro">&gt; Cadastrar novo usuário [y/n] <input id="procInp" onkeyup="cadastroPag()"></div>
   <div class="proceedCentro2">&gt; Sair [y/n] <input id="procInp2" onkeyup="sair()"></div>
 </body>
 
 </html>
 <script>
-  var dist = Number(distInp.value)
-  var res = 0
-
-  window.onload = obterDadosGrafico();
-  setInterval(() => {
-    obterDadosGrafico
-  }, interval);
+  var res1 = 0
+  var res2 = 0
+  var res3 = 0
+  var res4 = 0
+  var res5 = 0
+  var res6 = 0
+  var res7 = 0
+  setTimeout(() => {
+    obterDadosGrafico()
+  }, 18000);
   window.onload = mostrarLista();
-
+  
   // verificar_autenticacao();
-
+  
   function obterDadosGrafico() {
-    if (distInp.value == '') {
-      var distVar = 1
-    } else {
-      var distVar = dist
-    }
-    fetch("/denuncias/grafico", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        distServer: distVar
-      })
-    })
-      .then(function (resposta) {
-        if (resposta.ok) {
-          console.log(resposta);
-
-          resposta.json().then(json => {
-            console.log(json[0].DistCont);
-            console.log(json.distrito);
-            // sessionStorage.EMAIL_USUARIO = json.email;
-            res = json[0]
-          });
-
-        } else {
-
-          console.log("Houve um erro ao tentar realizar o login!");
-          resposta.text().then(texto => {
-            console.error(texto);
-          });
-        }
-
-      }).catch(function (erro) {
-        console.log(erro);
-      })
-
-    return false;
-  }
-
+    var distVar = 1
+        
+        
+        fetch("/denuncias/grafico", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            distServer: distVar
+          })
+        })
+          .then(function (resposta) {
+            if (resposta.ok) {
+              console.log(resposta);
+    
+              resposta.json().then(json => {
+                console.log(json[0].DistCont);
+                console.log(json[1].DistCont);
+                console.log(json[2].DistCont);
+                console.log(json[3].DistCont);
+                console.log(json[4].DistCont);
+                console.log(json[5].DistCont);
+                console.log(json[6].DistCont);
+                console.log(json.distrito);
+                // sessionStorage.EMAIL_USUARIO = json.email;
+                res1 = json[0].DistCont
+                res2 = json[1].DistCont
+                res3 = json[2].DistCont
+                res4 = json[3].DistCont
+                res5 = json[4].DistCont
+                res6 = json[5].DistCont
+                res7 = json[6].DistCont
+              });
+              
+            } else {
+              
+              console.log("Houve um erro ao tentar realizar o login!");
+              resposta.text().then(texto => {
+                console.error(texto);
+              });
+            }
+            
+          }).catch(function (erro) {
+            console.log(erro);
+          })
+          
+          resultado.innerHTML =`Gotham Central: ${res1} <br>
+          Velha Gotham e Chinatown: ${res2} <br>
+          Bristol: ${res3} <br>
+          Midtown e Burnley: ${res4} <br>
+          East End: ${res5} <br>
+          Otisburg: ${res6} <br>
+          Tricorner: ${res7} <br>
+          `
+          return false;
+      
+      }
+    
 </script>

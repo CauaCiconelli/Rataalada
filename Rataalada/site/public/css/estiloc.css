@@ -265,3 +265,11 @@ input{
     white-space: nowrap;
     margin-bottom: 5px;
 }
+
+.distA{
+    overflow: hidden;
+    width: 0;
+    animation: typing 1s steps(1, end) 16s forwards;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
